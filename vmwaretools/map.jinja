@@ -1,6 +1,6 @@
 {% set vmwaretools  = salt['grains.filter_by']( {
   'Debian': {
-    'dependencies': ['perl'], ['build-essential'],
+    'dependencies': ['perl', 'build-essential'],
   },
   'RedHat': {
     'dependencies': ['perl'],

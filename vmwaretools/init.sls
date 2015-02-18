@@ -1,5 +1,5 @@
 {% from "vmwaretools/map.jinja" import vmwaretools with context %}
-
+{%  if grains['virtual'] == "VMware" %}
 {% set config = {
     'packageurl': salt['pillar.get']('vmwaretools:packageurl', ''), 
 } %}
@@ -19,3 +19,4 @@ vmwaretools.dependencies:
 {% for dep in vmwaretools.dependencies %}
       - {{ dep }}
 {% endfor %}
+{%  endif %}
